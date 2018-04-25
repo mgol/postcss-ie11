@@ -1,6 +1,6 @@
 {
   "name": "postcss-ie11",
-  "version": "0.0.1",
+  "version": "0.0.2-pre",
   "description": "PostCSS plugin pack making it easier to work with IE 11",
   "keywords": [
     "postcss",
