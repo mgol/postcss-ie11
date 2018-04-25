@@ -20,8 +20,8 @@
   "homepage": "https://github.com/mgol/postcss-ie11",
   "dependencies": {
     "postcss": "^6.0.21",
-    "postcss-ie11-pseudo-class": "^0.1.1",
-    "postcss-ie11-supports": "^0.1.2"
+    "postcss-ie11-pseudo-class": "^0.1.2",
+    "postcss-ie11-supports": "^0.1.3"
   },
   "devDependencies": {
     "dedent": "0.7.0",
