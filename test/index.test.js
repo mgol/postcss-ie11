@@ -45,3 +45,39 @@ it('supports custom ieSelector', () =>
         {ieSelector: '_:-ms-lang(x)'},
     ),
 );
+
+it('allows to selectively disable plugins', () =>
+    run(
+        `
+            @supports not (display: grid) {
+                a { color: black; }
+            }
+            :ie11 .custom-class { color: black; }
+        `,
+        `
+            @supports not (display: grid) {
+                a { color: black; }
+            }
+            _:-ms-fullscreen, .custom-class { color: black; }
+        `,
+        {plugins: {supports: false}},
+    ),
+);
+
+it('allows to disable all plugins', () =>
+    run(
+        `
+            @supports not (display: grid) {
+                a { color: black; }
+            }
+            :ie11 .custom-class { color: black; }
+        `,
+        `
+            @supports not (display: grid) {
+                a { color: black; }
+            }
+            :ie11 .custom-class { color: black; }
+        `,
+        {plugins: {supports: false, pseudoClass: false}},
+    ),
+);

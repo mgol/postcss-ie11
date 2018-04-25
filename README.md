@@ -55,7 +55,37 @@ postcss([
 
 ### Options
 
-TODO
+You can selectively disable or enable each of the included plugins by setting a proper key to `false` inside of the `plugins` option object. All plugins are enabled by default.
+
+Usage:
+```js
+postcss([
+    require('postcss-ie11')({
+        plugins: {
+            pluginToBeDisabled: false,
+            pluginToBeEnabled: true,
+        },
+    }),
+])
+```
+
+The possible plugin ids are:
+
+* `supports`: represents [postcss-ie11-supports](https://www.npmjs.com/package/postcss-ie11-supports)
+* `pseudoClass`: represents [postcss-ie11-pseudo-class](https://www.npmjs.com/package/postcss-ie11-pseudo-class)
+
+For example, the following invocation will disable all plugins, effectively disabling the whole `postcss-ie11` plugin pack:
+
+```js
+postcss([
+    require('postcss-ie11')({
+        plugins: {
+            supports: false,
+            pseudoClass: false,
+        },
+    }),
+])
+```
 
 ### Advanced usage
 
