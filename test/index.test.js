@@ -1,15 +1,15 @@
-'use strict';
+import test from 'node:test';
 
-const {run} = require('./utils');
+import {run} from './utils.js';
 
-it('doesn\'t touch regular blocks', () =>
+test('doesn\'t touch regular blocks', () =>
     run(
         'a { color: black; }',
         'a { color: black; }',
     ),
 );
 
-it('enables multiple plugins', () =>
+test('enables multiple plugins', () =>
     run(
         `
             @supports not (display: grid) {
@@ -27,7 +27,7 @@ it('enables multiple plugins', () =>
     ),
 );
 
-it('supports custom ieSelector', () =>
+test('supports custom ieSelector', () =>
     run(
         `
             @supports not (display: grid) {
@@ -46,7 +46,7 @@ it('supports custom ieSelector', () =>
     ),
 );
 
-it('allows to selectively disable plugins', () =>
+test('allows to selectively disable plugins', () =>
     run(
         `
             @supports not (display: grid) {
@@ -64,7 +64,7 @@ it('allows to selectively disable plugins', () =>
     ),
 );
 
-it('allows to disable all plugins', () =>
+test('allows to disable all plugins', () =>
     run(
         `
             @supports not (display: grid) {
